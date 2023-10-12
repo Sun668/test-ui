@@ -1,12 +1,15 @@
 import Image from "next/image";
 
 export default function Tag() {
+  function getData() {
+    fetch('/api/list')
+  }
   return (
     <div className="ml-[30px] mr-[26px] mt-[17px] divide-y  text-[#062C81]">
       <div className="flex text-[14px] pb-[8px] pt-[8px] items-center">
-        <div className="text-[#D70B5F] mr-[14px] font-bold">Recommended</div>
-        <div className="mr-[24px]">Fan Fiction</div>
-        <div className="mr-[50px]">Sci-fi</div>
+        <div onClick={getData} className="cursor-pointer text-[#D70B5F] mr-[14px] font-bold">Recommended</div>
+        <div onClick={getData} className="cursor-pointer mr-[24px]">Fan Fiction</div>
+        <div onClick={getData} className="cursor-pointer mr-[50px]">Sci-fi</div>
         <div className="mr-[5px]">RPG</div>
         <Image src="/arrowRight.svg" alt="" width={17} height={17}/>
       </div>
